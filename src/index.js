@@ -1,5 +1,16 @@
+/* eslint-disable no-console */
+/* eslint-disable no-param-reassign */
 import login from './utils/login';
 import './app.scss';
+
+chayns.ready.then(() => {
+    chayns.ui.accordion.init();
+    console.log('Chayns is ready, environment loaded', chayns.env);
+}).catch(() => {
+    console.warn('No chayns environment found');
+}).then(() => {
+    console.log('Will always be executed');
+});
 
 const handleUserIsLoggedIn = ($introElement, $loginBtn) => {
     $introElement.innerText = `Hallo ${chayns.env.user.firstName}`;

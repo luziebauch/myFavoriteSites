@@ -12,3 +12,25 @@
     padding-top: 10px;
   }
 }
+
+.list{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 50px 50px 0 50px;
+  padding: 0;
+  justify-content: space-between;
+}
+.element{
+  width: 221.78px;
+  margin: 10px 0;
+}
+.moreSites{
+  text-align: center;
+}
+.accordion{
+  margin: 30px auto;
+}
+.content{
+  padding: 10px;
+}
