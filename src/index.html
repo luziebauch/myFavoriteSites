@@ -17,31 +17,32 @@
     <div id="app">
         <div class="tapp">
 
-            <h1>My favorite Sites</h1>
-
-            <p>Auf dieser Seite wirst du auf jeden Fall fündig! Ob es das nächste Restaurant oder der nächste
-                Sportverein
-                ist, es ist für jeden etwas dabei. Meine persönlichen Favoriten habe ich sogar für dich herausgesucht.
-                Also los geht's und lass dich inspierieren. Viel Spaß beim Stöbern!</p>
-
-            <div class="searchFilterLine">
-                <!--<div class="filterComboBox">
-                        <div><p>Filter:</p></div>
-                        <select style="opacity: 0.5;">
-                            <option value="0">Keine</option>
-                            <option value="1">Restaurants</option>
-                            <option value="2">Shopping</option>
-                            <option value="3">Sport</option>
-                            <option value="4">Hotels</option>
-                            <option value="5">Bar</option>
-                        </select>
-                    </div>-->
+            <div class="intro">
+                <div>
+                    <h1>My favorite Sites</h1>
+                </div>
                 <div class="searching">
                     <input class="input" type="text" id="search" style="width: 200px; border: none;"
                         placeholder="Suche">
                     <i class="fal fa-search" style="color: #858585"></i>
                 </div>
             </div>
+
+            <div class="introText">
+                <p>Auf dieser Seite wirst du auf jeden Fall fündig! Ob es das nächste Restaurant oder der nächste
+                    Sportverein
+                    ist, es ist für jeden etwas dabei. Meine persönlichen Favoriten habe ich sogar für dich
+                    herausgesucht.
+                    Also los geht's und lass dich inspierieren. Viel Spaß beim Stöbern!</p>
+            </div>
+
+            <!--<div class="searchFilterLine">
+                <div class="searching">
+                    <input class="input" type="text" id="search" style="width: 200px; border: none;"
+                        placeholder="Suche">
+                    <i class="fal fa-search" style="color: #858585"></i>
+                </div>
+            </div>-->
 
             <div class="list">
                 <div class="element">
@@ -95,12 +96,10 @@
                 </div>
                 <div class="accordion__body">
                     <div class="content">
-                        <div class="recommend">
-                            <p>Welche Seite fehlt noch?</p>
-                            <button class="button">Site auswählen</button>
+                        <div class="input-group">
+                            <input class="input" type="text" id="url">
+                            <label for="email"> Website </label>
                         </div>
-                        <p>Warum genau diese Seite?</p>
-                        <textarea class="input" style="width: 100%" name="comment" type="text" autogrow=true></textarea>
                         <div class="factsUser">
                             <div class="input-group  <!--labelRight-->">
                                 <input class="input" type="text" id="name1">
@@ -110,7 +109,7 @@
                                 <input class="input" type="text" id="name2">
                                 <label for="name2"> Nachname </label>
                             </div>
-                            <div class="input-group ">
+                            <div class="input-group">
                                 <input class="input" type="text" id="email">
                                 <label for="email"> eMail </label>
                             </div>
@@ -128,6 +127,8 @@
                                     <label for="plz"> Ort </label>
                                 </div>
                             </div>
+                            <textarea class="input" style="width: 100%" name="comment" type="text" autogrow=true
+                                placeholder="Anmerkung"></textarea>
                         </div>
                         <div class="sending">
                             <button class="button">Abschicken</button>
