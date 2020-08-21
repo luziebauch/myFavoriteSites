@@ -12,10 +12,10 @@
     padding-top: 10px;
   }
 }*/
-.searchFilterLine{
+.intro{
   display: flex;
-  justify-content: flex-end; //space-between
-  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
 }
 .filterComboBox{
   display: flex;
@@ -49,12 +49,6 @@
 .content{
   padding: 10px;
   margin: 10px 0;
-}
-.recommend{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
 }
 .factsUser > div{
   margin: 10px 0;
