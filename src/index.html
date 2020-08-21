@@ -19,40 +19,62 @@
 
             <h1>My favorite Sites</h1>
 
-            <p>Hier findest du meine Sites, die ich am besten finde. Lass dich gerne inspirieren und schau, was du mal
-                ausprobieren möchtest. Wenn du mir einen Geheimtipp geben möchtest, kannst du die Site gerne unten an
-                mich
-                weiter empfehlen. Viel Spaß beim Stöbern!</p>
+            <p>Auf dieser Seite wirst du auf jeden Fall fündig! Ob es das nächste Restaurant oder der nächste
+                Sportverein
+                ist, es ist für jeden etwas dabei. Meine persönlichen Favoriten habe ich sogar für dich herausgesucht.
+                Also los geht's und lass dich inspierieren. Viel Spaß beim Stöbern!</p>
+
+            <div class="searchFilterLine">
+                <!--<div class="filterComboBox">
+                        <div><p>Filter:</p></div>
+                        <select style="opacity: 0.5;">
+                            <option value="0">Keine</option>
+                            <option value="1">Restaurants</option>
+                            <option value="2">Shopping</option>
+                            <option value="3">Sport</option>
+                            <option value="4">Hotels</option>
+                            <option value="5">Bar</option>
+                        </select>
+                    </div>-->
+                <div class="searching">
+                    <input class="input" type="text" id="search" style="width: 200px; border: none;"
+                        placeholder="Suche">
+                    <i class="fal fa-search" style="color: #858585"></i>
+                </div>
+            </div>
 
             <div class="list">
                 <div class="element">
-                    <img src="https://chayns.tobit.com/storage/59140-09519/Images/icon-72.png?_=1597925880000"
-                        style="width: 50%">
-                    <p>Das Bamboo! in Ahaus</p>
+                    <img src="https://chayns.tobit.com/storage/59140-09519/Images/icon-72.png?_=1597925880000">
+                    <p>Bamboo!</p>
                 </div>
                 <div class="element">
-                    <img src="https://chayns.tobit.com/storage/59141-06162/Images/icon-72.png?_=1597925880000"
-                        style="width: 50%">
-                    <p>Die Sportsbar Offsite in der Ahauser Innenstadt</p>
+                    <img src="https://chayns.tobit.com/storage/59141-06162/Images/icon-72.png?_=1597925880000">
+                    <p>Offsite</p>
                 </div>
                 <div class="element">
-                    <img src="https://chayns.tobit.com/storage/77894-19075/images/icon-75.png" style="width: 50%">
-                    <p>Die Wüllener Grillstube</p>
+                    <img src="https://chayns.tobit.com/storage/77894-19075/images/icon-75.png">
+                    <p>Wüllener...</p>
                 </div>
                 <div class="element">
-                    <img src="https://chayns.tobit.com/storage/73135-19763/Images/icon-72.png?_=1597925880000"
-                        style="width: 50%">
-                    <p>Die Stadt Ahaus selbst</p>
+                    <img src="https://chayns.tobit.com/storage/73135-19763/Images/icon-72.png?_=1597925880000">
+                    <p>Stadt Ahaus</p>
                 </div>
                 <div class="element">
-                    <img src="https://chayns.tobit.com/storage/59143-10608/Images/icon-72.png?_=1597925880000"
-                        style="width: 50%">
-                    <p>Die outgesourcte Küche in Ahaus</p>
+                    <img src="https://chayns.tobit.com/storage/59143-10608/Images/icon-72.png?_=1597925880000">
+                    <p>TKWY</p>
                 </div>
                 <div class="element">
-                    <img src="https://chayns.tobit.com/storage/70264-12494/Images/icon-72.png?_=1597925880000"
-                        style="width: 50%">
-                    <p>Das Kombibad für Ahaus und Umgebung</p>
+                    <img src="https://chayns.tobit.com/storage/70264-12494/Images/icon-72.png?_=1597925880000">
+                    <p>AquaAhaus</p>
+                </div>
+                <div class="element">
+                    <img src="https://chayns.tobit.com/storage/77896-07352/images/icon-75.png">
+                    <p>BookTrade</p>
+                </div>
+                <div class="element">
+                    <img src="https://chayns.tobit.com/storage/77896-07444/images/icon-75.png">
+                    <p>Eiszeit</p>
                 </div>
             </div>
 
@@ -61,8 +83,6 @@
                     <p>Mehr anzeigen</p>
                 </button>
             </div>
-
-
 
             <div class="accordion" data-group="1">
                 <div class="accordion__head">
@@ -75,34 +95,50 @@
                 </div>
                 <div class="accordion__body">
                     <div class="content">
-                        <div class="flex">
-                            <div class="flexer"></div>
-                            <button type="button" class="choosebutton">Site auswählen</button>
+                        <div class="recommend">
+                            <p>Welche Seite fehlt noch?</p>
+                            <button class="button">Site auswählen</button>
                         </div>
-                        <p>Warum genau deine Site?</p>
-                        <textarea class="input" style="width: 100%" name="comment" type="text" autogrow=true
-                            placeholder="Hier steht dein Text"></textarea>
-                        <div class="input-group textInp">
-                            <input class="input textInp" type="text" id="name1" required value style="width: 100%">
-                            <label for id="name1" class> Vorname </label>
+                        <p>Warum genau diese Seite?</p>
+                        <textarea class="input" style="width: 100%" name="comment" type="text" autogrow=true></textarea>
+                        <div class="factsUser">
+                            <div class="input-group  <!--labelRight-->">
+                                <input class="input" type="text" id="name1">
+                                <label for="name1"> Vorname </label>
+                            </div>
+                            <div class="input-group">
+                                <input class="input" type="text" id="name2">
+                                <label for="name2"> Nachname </label>
+                            </div>
+                            <div class="input-group ">
+                                <input class="input" type="text" id="email">
+                                <label for="email"> eMail </label>
+                            </div>
+                            <div class="input-group">
+                                <input class="input" type="text" id="streetNumber">
+                                <label for="streetNumber"> Straße/Hausnummer </label>
+                            </div>
+                            <div class="adress">
+                                <div class="input-group">
+                                    <input class="input" type="text" id="plz" style="width: 195px;">
+                                    <label for="plz"> PLZ </label>
+                                </div>
+                                <div class="input-group">
+                                    <input class="input" type="text" id="town" style="width: 540.33px;">
+                                    <label for="plz"> Ort </label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="input-group textInp">
-                            <input class="input textInp" type="text" id="name2" required value style="width: 100%">
-                            <label for id="name2" class> Nachname </label>
-                        </div>
-                        <div class="input-group textInp">
-                            <input class="input textInp" type="text" id="email" required value style="width: 100%">
-                            <label for id="email" class> eMail </label>
+                        <div class="sending">
+                            <button class="button">Abschicken</button>
                         </div>
                     </div>
                 </div>
-
+                <script src="https://api.chayns-static.space/js/v4.0/chayns.min.js"></script>
+                <script src="https://api.chayns-static.space/ui/v4.0/chayns-ui.min.js"></script>
+                <script
+                    src="https://polyfillsvc.tobit.com/polyfill.min.js?flags=gated&features=default,es6,Map,fetch"></script>
             </div>
-            <script src="https://api.chayns-static.space/js/v4.0/chayns.min.js"></script>
-            <script src="https://api.chayns-static.space/ui/v4.0/chayns-ui.min.js"></script>
-            <script
-                src="https://polyfillsvc.tobit.com/polyfill.min.js?flags=gated&features=default,es6,Map,fetch"></script>
-        </div>
 </body>
 
 </html>

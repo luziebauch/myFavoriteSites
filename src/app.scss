@@ -1,4 +1,4 @@
-.userInfo {
+/*.userInfo {
   display: flex;
   flex-direction: column;
 
@@ -11,26 +11,63 @@
     justify-content: center;
     padding-top: 10px;
   }
+}*/
+.searchFilterLine{
+  display: flex;
+  justify-content: flex-end; //space-between
+  margin-top: 20px;
 }
-
+.filterComboBox{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 150px;
+  color: #858585;
+}
+.searching{
+  text-align: right;
+  border-bottom: solid 1px #858585;
+}
 .list{
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  margin: 50px 50px 0 50px;
   padding: 0;
   justify-content: space-between;
+  margin-top: 20px;
 }
 .element{
-  width: 221.78px;
-  margin: 10px 0;
+  width: 95px;
+  margin: 10px auto;
 }
 .moreSites{
   text-align: center;
 }
 .accordion{
-  margin: 30px auto;
+  margin: 35px auto;
 }
 .content{
   padding: 10px;
+  margin: 10px 0;
+}
+.recommend{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.factsUser > div{
+  margin: 10px 0;
+}
+.factsUser{
+  margin-top: 10px;
+}
+.adress{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.sending{
+  margin-top:  20px;
+  text-align: center;
 }
