@@ -24,7 +24,7 @@
                 <div class="searching">
                     <input class="input" type="text" id="search" style="width: 200px; border: none;"
                         placeholder="Suche">
-                    <i class="fal fa-search" style="color: #858585"></i>
+                    <i class="fal fa-search" id="searchIcon" style="color: #858585"></i>
                 </div>
             </div>
 
@@ -93,6 +93,7 @@
                     <img src="https://sub60.tobit.com/l/156866?size=70">
                     <p>Lesezeit</p>
                 </div>
+                <div id="newElements"></div>
             </div>
 
             <div class="moreSites">
@@ -114,7 +115,7 @@
                     <div class="content">
                         <div class="input-group" id="url">
                             <input class="input" type="text" id="urlInput">
-                            <label for="urlInput"> Website </label>
+                            <label for="urlInput" id="urlLabel" class="input--invalid"> Website </label>
                         </div>
                         <div class="factsUser">
                             <div class="input-group" id="firstname">
@@ -127,7 +128,7 @@
                             </div>
                             <div class="input-group" id="email">
                                 <input class="input" type="text" id="emailInput">
-                                <label for="emailInput" class="input--invalid"> eMail </label>
+                                <label for="emailInput" id="emailLabel" class="input--invalid"> eMail </label>
                             </div>
                             <div class="input-group" id="streetNumber">
                                 <input class="input" type="text" id="streetNumberInput">
@@ -144,12 +145,12 @@
                                 </div>
                             </div>
                             <div class="input-group" id="comment">
-                                <textarea class="input" style="width: 100%" name="comment" type="text" autogrow=true
+                                <textarea class="input" id="commentText" style="width: 100%" name="comment" type="text" autogrow=true
                                     placeholder="Anmerkung"></textarea>
                             </div>
                         </div>
                         <div class="sending">
-                            <button class="button">Abschicken</button>
+                            <button class="button" id="sendingButton">Abschicken</button>
                         </div>
                     </div>
                 </div>

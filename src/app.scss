@@ -36,6 +36,13 @@
   justify-content: space-between;
   margin-top: 20px;
 }
+#newElements{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 0;
+  justify-content: space-between;
+}
 .element{
   width: 125px;
   margin: 10px auto;
