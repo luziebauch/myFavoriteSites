@@ -19,7 +19,7 @@ const init = async () => {
         await chayns.ready;
         document.querySelector('#moreSites').addEventListener('click', getData);
         document.querySelector('#searchIcon').addEventListener('click', searching);
-        document.querySelector('#sendingButton').addEventListener('click', sending);
+        document.querySelector('#sendingButton').addEventListener('click', checkForLogin);
         document.querySelector('#urlInput').addEventListener('input', () => textInput('#url', '#urlLabel'));
         document.querySelector('#firstnameInput').addEventListener('input', () => textInput('#firstname', '#firstnameLabel'));
         document.querySelector('#lastnameInput').addEventListener('input', () => textInput('#lastname', '#lastnameLabel'));
@@ -33,7 +33,7 @@ const init = async () => {
 };
 const getData = async (show = true) => {
     chayns.showWaitCursor();
-    const data = await fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchString}&Skip=${siteCounter}&Take=24`);
+    const data = await fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchString}&Skip=${siteCounter}&Take=25`);
     const formatedData = await data.json();
     const arrayData = await formatedData.Data;
     if (show) {
@@ -45,7 +45,7 @@ const getData = async (show = true) => {
 const dataShow = (arrayData) => {
     for (let i = 0; i < arrayData.length; i++) {
         const locationId = arrayData[i].locationId;
-        const appstoreName = arrayData[i].appstoreName;
+        let appstoreName = arrayData[i].appstoreName;
         const siteId = arrayData[i].siteId;
 
         const newElement = document.querySelector('#newElements');
@@ -57,7 +57,11 @@ const dataShow = (arrayData) => {
 
         image.classList.add('image');
         background.classList.add('image');
-        name.innerHTML = appstoreName.substring(0, 11);
+        if (appstoreName.length >= 13) {
+            appstoreName = appstoreName.substring(0, 10);
+            appstoreName += '...';
+        }
+        name.innerHTML = appstoreName;
         background.style = 'background-image: url(https://sub60.tobit.com/l/152342?size=70)';
         image.style = `background-image: url(https://sub60.tobit.com/l/${locationId}?size=70)`;
 
@@ -67,7 +71,7 @@ const dataShow = (arrayData) => {
         container.appendChild(name);
         background.addEventListener('click', () => { chayns.openUrlInBrowser(`https://chayns.net/${siteId}`); });
     }
-    siteCounter += 24;
+    siteCounter += 25;
     chayns.hideWaitCursor();
 };
 function textInput(id, labelId) {
@@ -83,6 +87,23 @@ function textInput(id, labelId) {
         label.classList.add('input--invalid');
     }
 }
+function checkForLogin() {
+    if (chayns.env.user.isAuthenticated) {
+        sending();
+    } else {
+        chayns.addAccessTokenChangeListener(() => {
+            sending();
+        });
+        chayns.login();
+    }
+}
+/* function checkButton() {
+    if (document.querySelector('#urlInput').value && document.querySelector('#firstnameInput').value && document.querySelector('#lastnameInput').value && document.querySelector('#emailInput').value) {
+        document.getElementById('#sendingButton').enabled = true;
+    } else {
+        document.getElementById('#sendingButton').disabled = true;
+    }
+} */
 function sending() {
     const urlInput = document.querySelector('#urlInput').value;
     const firstnameInput = document.querySelector('#firstnameInput').value;
@@ -96,11 +117,11 @@ function sending() {
         text: `Empfohlende Website: ${urlInput}
         Name: ${firstnameInput} ${lastnameInput}
         Email: ${emailInput}
-        Adresse: ${streetNumberInput}, ${plzInput}, ${townInput} 
-        Seine Anmerkung: ${comment}`
+        Adresse: ${streetNumberInput}, ${plzInput} ${townInput}
+        Anmerkung: ${comment}`
     }).then((data) => {
         if (data.status === 200) {
-            chayns.dialog.alert('', 'Danke!');
+            chayns.dialog.alert(`${chayns.env.user.firstName}, danke für deine Empfehlung!`);
         }
     });
 }
