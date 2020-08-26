@@ -112,39 +112,41 @@
                 </div>
                 <div class="accordion__body">
                     <div class="content">
-                        <div class="input-group">
-                            <input class="input" type="text" id="url">
-                            <label for="email"> Website </label>
+                        <div class="input-group" id="url">
+                            <input class="input" type="text" id="urlInput">
+                            <label for="urlInput"> Website </label>
                         </div>
                         <div class="factsUser">
-                            <div class="input-group">
-                                <input class="input" type="text" id="name1">
-                                <label for="name1"> Vorname </label>
+                            <div class="input-group" id="firstname">
+                                <input class="input" type="text" id="firstnameInput">
+                                <label for="firstNameInput" id="firstnameLabel" class="input--invalid"> Vorname </label>
                             </div>
-                            <div class="input-group">
-                                <input class="input" type="text" id="name2">
-                                <label for="name2"> Nachname </label>
+                            <div class="input-group" id="lastname">
+                                <input class="input" type="text" id="lastnameInput">
+                                <label for="lastnameInput" id="lastnameLabel" class="input--invalid"> Nachname </label>
                             </div>
-                            <div class="input-group">
-                                <input class="input" type="text" id="email">
-                                <label for="email"> eMail </label>
+                            <div class="input-group" id="email">
+                                <input class="input" type="text" id="emailInput">
+                                <label for="emailInput" class="input--invalid"> eMail </label>
                             </div>
-                            <div class="input-group">
-                                <input class="input" type="text" id="streetNumber">
-                                <label for="streetNumber"> Straße/Hausnummer </label>
+                            <div class="input-group" id="streetNumber">
+                                <input class="input" type="text" id="streetNumberInput">
+                                <label for="streetNumberInput"> Straße/Hausnummer </label>
                             </div>
                             <div class="adress">
-                                <div class="input-group">
-                                    <input class="input" type="text" id="plz" style="width: 195px;">
-                                    <label for="plz"> PLZ </label>
+                                <div class="input-group" id="plz">
+                                    <input class="input" type="text" id="plzInput" style="width: 195px;">
+                                    <label for="plzInput"> PLZ </label>
                                 </div>
-                                <div class="input-group">
-                                    <input class="input" type="text" id="town" style="width: 540.33px;">
-                                    <label for="plz"> Ort </label>
+                                <div class="input-group" id="town">
+                                    <input class="input" type="text" id="townInput" style="width: 540.33px;">
+                                    <label for="townInput"> Ort </label>
                                 </div>
                             </div>
-                            <textarea class="input" style="width: 100%" name="comment" type="text" autogrow=true
-                                placeholder="Anmerkung"></textarea>
+                            <div class="input-group" id="comment">
+                                <textarea class="input" style="width: 100%" name="comment" type="text" autogrow=true
+                                    placeholder="Anmerkung"></textarea>
+                            </div>
                         </div>
                         <div class="sending">
                             <button class="button">Abschicken</button>
