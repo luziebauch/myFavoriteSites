@@ -120,17 +120,21 @@ function sending() {
     const plzInput = document.querySelector('#plzInput').value;
     const townInput = document.querySelector('#townInput').value;
     const comment = document.querySelector('#commentText').value;
-    chayns.intercom.sendMessageToPage({
-        text: `Empfohlende Website: ${urlInput}
+    if (urlInput === '' || firstNameInput === '' || lastNameInput === '' || emailInput === '') {
+        chayns.dialog.alert('Bitte fülle alle Pflichtfelder aus!');
+    } else {
+        chayns.intercom.sendMessageToPage({
+            text: `Empfohlende Website: ${urlInput}
         Name: ${firstNameInput} ${lastNameInput}
         Email: ${emailInput}
         Adresse: ${streetNumberInput}, ${plzInput} ${townInput}
         Anmerkung: ${comment}`
-    }).then((data) => {
-        if (data.status === 200) {
-            chayns.dialog.alert(`${chayns.env.user.firstName}, danke für deine Empfehlung!`);
-        }
-    });
+        }).then((data) => {
+            if (data.status === 200) {
+                chayns.dialog.alert(`Danke für deine Empfehlung, ${chayns.env.user.firstName}!`);
+            }
+        });
+    }
 }
 const searchingTimeout = () => {
     clearTimeout(timeout);
