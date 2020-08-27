@@ -2,8 +2,7 @@
 /* eslint-disable no-param-reassign */
 import './app.scss';
 
-
-// Test Number One
+let timeout;
 let siteCounter = 0;
 let searchString = 'Ahaus';
 chayns.ready.then(() => {
@@ -21,7 +20,7 @@ const init = async () => {
     try {
         await chayns.ready;
         document.querySelector('#moreSites').addEventListener('click', getData);
-        document.querySelector('#searchIcon').addEventListener('click', searching);
+        document.querySelector('#search').addEventListener('input', searchingTimeout);
         document.querySelector('#sendingButton').addEventListener('click', checkForLogin);
         document.querySelector('#urlInput').addEventListener('input', () => textInput('#url', '#urlLabel'));
         document.querySelector('#firstNameInput').addEventListener('input', () => textInput('#firstName', '#firstNameLabel'));
@@ -133,8 +132,11 @@ function sending() {
         }
     });
 }
+const searchingTimeout = () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(searching, 800);
+};
 const searching = async () => {
-    console.log('klappt');
     searchString = document.querySelector('#search').value;
     console.log(searchString);
     const dataReturn = await getData(false);
