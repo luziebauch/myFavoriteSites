@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-param-reassign */
 import './app.scss';
-// Space is misssing.
+
 let timeout;
 let siteCounter = 0;
 let searchString = 'Ahaus';
@@ -112,7 +112,6 @@ function checkForLogin() {
     }
 } */
 function sending() {
-    console.log('Test the formular');
     const urlInput = document.querySelector('#urlInput').value;
     const firstNameInput = document.querySelector('#firstNameInput').value;
     const lastNameInput = document.querySelector('#lastNameInput').value;
