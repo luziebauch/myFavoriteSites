@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-param-reassign */
 import './app.scss';
-
+// Comment Test
 let timeout;
 let siteCounter = 0;
 let searchString = 'Ahaus';
