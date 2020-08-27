@@ -2,6 +2,8 @@
 /* eslint-disable no-param-reassign */
 import './app.scss';
 
+
+// Test Number One
 let siteCounter = 0;
 let searchString = 'Ahaus';
 chayns.ready.then(() => {
