@@ -112,6 +112,7 @@ function checkForLogin() {
     }
 } */
 function sending() {
+    console.log('Test the formular');
     const urlInput = document.querySelector('#urlInput').value;
     const firstNameInput = document.querySelector('#firstNameInput').value;
     const lastNameInput = document.querySelector('#lastNameInput').value;
