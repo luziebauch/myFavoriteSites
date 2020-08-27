@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="noindex" />
@@ -11,18 +12,145 @@
 
     <title>chayns® ESNext Template</title>
 </head>
+
 <body>
-<div id="app">
-    <div class="tapp">
-        <div class="userInfo">
-            <p id="intro">
-            <div class="btnWrapper">
-                <button id="loginBtn" class="button" />
+    <div id="app">
+        <div class="tapp">
+
+            <div class="intro">
+                <div>
+                    <h1>My favorite Sites</h1>
+                </div>
+                <div class="searching">
+                    <input class="input" type="text" id="search" style="width: 200px; border: none;"
+                        placeholder="Suche">
+                    <i class="fal fa-search" id="searchIcon" style="color: #858585"></i>
+                </div>
             </div>
-        </div>
-    </div>
-    <script src="https://api.chayns-static.space/js/v4.0/chayns.min.js"></script>
-    <script src="https://polyfillsvc.tobit.com/polyfill.min.js?flags=gated&features=default,es6,Map,fetch"></script>
-</div>
+
+            <div class="introText">
+                <p>Auf dieser Seite wirst du auf jeden Fall fündig! Ob es das nächste Restaurant oder der nächste
+                    Sportverein
+                    ist, es ist für jeden etwas dabei. Meine persönlichen Favoriten habe ich sogar für dich
+                    herausgesucht.
+                    Also los geht's und lass dich inspierieren. Viel Spaß beim Stöbern!</p>
+            </div>
+
+            <!--<div class="searchFilterLine">
+                <div class="searching">
+                    <input class="input" type="text" id="search" style="width: 200px; border: none;"
+                        placeholder="Suche">
+                    <i class="fal fa-search" style="color: #858585"></i>
+                </div>
+            </div>-->
+
+            <div class="list" id="listSites">
+                <div class="element">
+                    <img id="bamboo" src="https://sub60.tobit.com/l/1?size=70">
+                    <p>Bamboo!</p>
+                </div>
+                <div class="element">
+                    <img id="offsite" src="https://sub60.tobit.com/l/3?size=70">
+                    <p>Offsite</p>
+                </div>
+                <div class="element">
+                    <img id="grill" src="https://sub60.tobit.com/l/177564?size=70">
+                    <p>Wüllener...</p>
+                </div>
+                <div class="element">
+                    <img id="cityAhaus" src="https://sub60.tobit.com/l/125979?size=70">
+                    <p>Stadt Ahaus</p>
+                </div>
+                <div class="element">
+                    <img id="tkwy" src="https://sub60.tobit.com/l/240?size=70">
+                    <p>TKWY</p>
+                </div>
+                <div class="element">
+                    <img id="pool" src="https://sub60.tobit.com/l/85733?size=70">
+                    <p>AquaAhaus</p>
+                </div>
+                <div class="element">
+                    <img id="bookTrade" src="https://sub60.tobit.com/l/183123?size=70">
+                    <p>BookTrade</p>
+                </div>
+                <div class="element">
+                    <img id="iceCream" src="https://sub60.tobit.com/l/183128?size=70">
+                    <p>Eiszeit</p>
+                </div>
+                <div class="element">
+                    <img id="pizza" src="https://sub60.tobit.com/l/18968?size=70">
+                    <p>Jeckys Pi...</p>
+                </div>
+                <div class="element">
+                    <img id="computer" src="https://sub60.tobit.com/l/183124?size=70">
+                    <p>Computer...</p>
+                </div>
+                <div id="newElements"></div>
+            </div>
+
+            <div class="moreSites">
+                <button class="button" id="moreSites">
+                    <p>Mehr anzeigen</p>
+                </button>
+            </div>
+
+            <div class="accordion" data-group="1">
+                <div class="accordion__head">
+                    <div class="accordion__head__icon accordion--trigger">
+                        <i class="ts-angle-right"></i>
+                    </div>
+                    <div class="accordion__head__title  accordion--trigger">
+                        Deine Empfehlung
+                    </div>
+                </div>
+                <div class="accordion__body">
+                    <div class="content">
+                        <div class="input-group" id="url">
+                            <input class="input" type="text" id="urlInput">
+                            <label for="urlInput" id="urlLabel" class="input--invalid"> Website </label>
+                        </div>
+                        <div class="factsUser">
+                            <div class="input-group" id="firstName">
+                                <input class="input" type="text" id="firstNameInput">
+                                <label for="firstNameInput" id="firstNameLabel" class="input--invalid"> Vorname </label>
+                            </div>
+                            <div class="input-group" id="lastName">
+                                <input class="input" type="text" id="lastNameInput">
+                                <label for="lastNameInput" id="lastNameLabel" class="input--invalid"> Nachname </label>
+                            </div>
+                            <div class="input-group" id="email">
+                                <input class="input" type="text" id="emailInput">
+                                <label for="emailInput" id="emailLabel" class="input--invalid"> eMail </label>
+                            </div>
+                            <div class="input-group" id="streetNumber">
+                                <input class="input" type="text" id="streetNumberInput">
+                                <label for="streetNumberInput"> Straße/Hausnummer </label>
+                            </div>
+                            <div class="adress">
+                                <div class="input-group" id="plz">
+                                    <input class="input" type="text" id="plzInput" style="width: 195px;">
+                                    <label for="plzInput"> PLZ </label>
+                                </div>
+                                <div class="input-group" id="town">
+                                    <input class="input" type="text" id="townInput" style="width: 540.33px;">
+                                    <label for="townInput"> Ort </label>
+                                </div>
+                            </div>
+                            <div class="input-group" id="comment">
+                                <textarea class="input" id="commentText" style="width: 100%" name="comment" type="text" autogrow=true
+                                    placeholder="Anmerkung"></textarea>
+                            </div>
+                        </div>
+                        <div class="sending">
+                            <button class="button" id="sendingButton">Abschicken</button>
+                        </div>
+                    </div>
+                </div>
+                <script src="https://api.chayns-static.space/js/v4.0/chayns.min.js"></script>
+                <script src="https://api.chayns-static.space/ui/v4.0/chayns-ui.min.js"></script>
+                <script
+                    src="https://polyfillsvc.tobit.com/polyfill.min.js?flags=gated&features=default,es6,Map,fetch"></script>
+            </div>
 </body>
+
 </html>
