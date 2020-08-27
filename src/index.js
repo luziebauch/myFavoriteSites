@@ -6,6 +6,7 @@ let siteCounter = 0;
 let searchString = 'Ahaus';
 chayns.ready.then(() => {
     init();
+    oldElements();
     chayns.ui.accordion.init();
     console.log('Chayns is ready, environment loaded', chayns.env);
 }).catch(() => {
@@ -21,8 +22,8 @@ const init = async () => {
         document.querySelector('#searchIcon').addEventListener('click', searching);
         document.querySelector('#sendingButton').addEventListener('click', checkForLogin);
         document.querySelector('#urlInput').addEventListener('input', () => textInput('#url', '#urlLabel'));
-        document.querySelector('#firstnameInput').addEventListener('input', () => textInput('#firstname', '#firstnameLabel'));
-        document.querySelector('#lastnameInput').addEventListener('input', () => textInput('#lastname', '#lastnameLabel'));
+        document.querySelector('#firstNameInput').addEventListener('input', () => textInput('#firstName', '#firstNameLabel'));
+        document.querySelector('#lastNameInput').addEventListener('input', () => textInput('#lastName', '#lastNameLabel'));
         document.querySelector('#emailInput').addEventListener('input', () => textInput('#email', '#emailLabel'));
         document.querySelector('#streetNumberInput').addEventListener('input', () => textInput('#streetNumber'));
         document.querySelector('#plzInput').addEventListener('input', () => textInput('#plz'));
@@ -98,16 +99,21 @@ function checkForLogin() {
     }
 }
 /* function checkButton() {
-    if (document.querySelector('#urlInput').value && document.querySelector('#firstnameInput').value && document.querySelector('#lastnameInput').value && document.querySelector('#emailInput').value) {
-        document.getElementById('#sendingButton').enabled = true;
+    const sendingButton = document.querySelector('#sendingButton');
+    const urlInput = document.querySelector('#urlInput');
+    const firstNameInput = document.querySelector('#firstNameInput');
+    const lastNameInput = document.querySelector('#lastNameInput');
+    const emailInput = document.querySelector('#emailInput');
+    if (urlInput.value && firstNameInput.value && lastNameInput.value && emailInput.value) {
+        sendingButton.disabled = false;
     } else {
-        document.getElementById('#sendingButton').disabled = true;
+        sendingButton.disabled = true;
     }
 } */
 function sending() {
     const urlInput = document.querySelector('#urlInput').value;
-    const firstnameInput = document.querySelector('#firstnameInput').value;
-    const lastnameInput = document.querySelector('#lastnameInput').value;
+    const firstNameInput = document.querySelector('#firstNameInput').value;
+    const lastNameInput = document.querySelector('#lastNameInput').value;
     const emailInput = document.querySelector('#emailInput').value;
     const streetNumberInput = document.querySelector('#streetNumberInput').value;
     const plzInput = document.querySelector('#plzInput').value;
@@ -115,7 +121,7 @@ function sending() {
     const comment = document.querySelector('#commentText').value;
     chayns.intercom.sendMessageToPage({
         text: `Empfohlende Website: ${urlInput}
-        Name: ${firstnameInput} ${lastnameInput}
+        Name: ${firstNameInput} ${lastNameInput}
         Email: ${emailInput}
         Adresse: ${streetNumberInput}, ${plzInput} ${townInput}
         Anmerkung: ${comment}`
@@ -139,3 +145,15 @@ const searching = async () => {
     dataShow(dataReturn);
     console.log(dataReturn);
 };
+function oldElements() {
+    document.querySelector('#bamboo').addEventListener('click', () => { chayns.openUrlInBrowser('https://bamboo-ahaus.com/'); });
+    document.querySelector('#offsite').addEventListener('click', () => { chayns.openUrlInBrowser('https://offsite-ahaus.de/'); });
+    document.querySelector('#grill').addEventListener('click', () => { chayns.openUrlInBrowser('https://xn--wllener-grillstube-m6b.de/'); });
+    document.querySelector('#cityAhaus').addEventListener('click', () => { chayns.openUrlInBrowser('https://ahaus.app/'); });
+    document.querySelector('#tkwy').addEventListener('click', () => { chayns.openUrlInBrowser('https://tkwy.de/'); });
+    document.querySelector('#pool').addEventListener('click', () => { chayns.openUrlInBrowser('https://aquahaus.app/'); });
+    document.querySelector('#bookTrade').addEventListener('click', () => { chayns.openUrlInBrowser('https://booktrade.chayns.net/'); });
+    document.querySelector('#iceCream').addEventListener('click', () => { chayns.openUrlInBrowser('https://eiszeit.chayns.net/'); });
+    document.querySelector('#pizza').addEventListener('click', () => { chayns.openUrlInBrowser('https://jeckys.app/'); });
+    document.querySelector('#computer').addEventListener('click', () => { chayns.openUrlInBrowser('https://computereditor.chayns.net/'); });
+}
