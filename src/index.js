@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-param-reassign */
 import './app.scss';
-
+// Only testing GitKraken
 let timeout;
 let siteCounter = 0;
 let searchString = 'Ahaus';
